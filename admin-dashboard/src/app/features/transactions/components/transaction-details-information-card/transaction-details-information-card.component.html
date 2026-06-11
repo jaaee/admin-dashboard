@@ -1,0 +1,147 @@
+<!--TO SHOW ADITIONAL INFORMATION ABOUT TRANSACTION-->
+
+<mat-card class="transaction-card">
+
+  <div class="section-header">
+    <mat-icon>receipt_long</mat-icon>
+    <span>Transaction Information</span>
+  </div>
+
+  <div class="info-grid">
+
+    <!-- LEFT CARD -->
+
+    <mat-card class="info-card">
+
+      <div class="info-row">
+        <div class="left">
+          <div class="icon-circle primary">
+            <mat-icon>receipt_long</mat-icon>
+          </div>
+
+          <span class="label">Reference No.</span>
+        </div>
+
+        <div class="value">
+          {{ transaction().referenceNo }}
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="left">
+          <div class="icon-circle primary">
+            <mat-icon>person_outline</mat-icon>
+          </div>
+
+          <span class="label">Customer Name</span>
+        </div>
+
+        <div class="value">
+          {{ transaction().customerName }}
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="left">
+          <div class="icon-circle success">
+            <mat-icon>currency_rupee</mat-icon>
+          </div>
+
+          <span class="label">Amount</span>
+        </div>
+
+        <div class="value">
+          ₹{{ transaction().amount | number:'1.2-2' }}
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="left">
+          <div class="icon-circle purple">
+            <mat-icon>payments</mat-icon>
+          </div>
+
+          <span class="label">Currency</span>
+        </div>
+
+        <div class="value">
+          {{ transaction().currency }}
+        </div>
+      </div>
+
+    </mat-card>
+
+    <!-- RIGHT CARD -->
+
+    <mat-card class="info-card">
+
+      <div class="info-row">
+        <div class="left">
+          <div class="icon-circle primary">
+            <mat-icon>hub</mat-icon>
+          </div>
+
+          <span class="label">Channel</span>
+        </div>
+
+        <div class="value">
+          {{ transaction().channel }}
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="left">
+          <div class="icon-circle purple">
+            <mat-icon>swap_horiz</mat-icon>
+          </div>
+
+          <span class="label">Type</span>
+        </div>
+
+        <div
+          class="value"
+           [ngClass]="getTypeClass(transaction().type)">
+
+          {{ transaction().type }}
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="left">
+          <div class="icon-circle success">
+            <mat-icon>verified_user</mat-icon>
+          </div>
+
+          <span class="label">Status</span>
+        </div>
+
+        <div
+          class="value"
+          [ngClass]="getStatusClass(transaction().status)">
+
+          {{ transaction().status }}
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="left">
+          <div class="icon-circle warning">
+            <mat-icon>speed</mat-icon>
+          </div>
+
+          <span class="label">Risk Score</span>
+        </div>
+
+        <div
+          class="value"
+         [ngClass]="transaction().riskLevel.toLowerCase()">
+
+          {{ transaction().riskScore }}
+        </div>
+      </div>
+
+    </mat-card>
+
+  </div>
+
+</mat-card>

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "UPI",
+    "percent": 45,
+    "count": "6,858",
+    "color": "#3b82f6"
+  },
+  {
+    "name": "Net Banking",
+    "percent": 25,
+    "count": "3,810",
+    "color": "#22c55e"
+  },
+  {
+    "name": "Card",
+    "percent": 15,
+    "count": "2,286",
+    "color": "#f59e0b"
+  },
+  {
+    "name": "Wallet",
+    "percent": 10,
+    "count": "1,524",
+    "color": "#8b5cf6"
+  },
+  {
+    "name": "Others",
+    "percent": 5,
+    "count": "762",
+    "color": "#d1d5db"
+  }
+]

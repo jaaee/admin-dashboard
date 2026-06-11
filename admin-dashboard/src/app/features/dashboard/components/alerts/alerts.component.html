@@ -1,0 +1,71 @@
+
+  <mat-card class="alerts-card">
+
+  <!-- HEADER -->
+  <mat-card-header class="header">
+
+    <div class="header-content">
+
+      <mat-icon class="header-icon warn" color="warn">
+        warning
+      </mat-icon>
+
+      <div>
+        <mat-card-title><b>Alerts</b></mat-card-title>
+        <mat-card-subtitle>
+          Important system notifications
+        </mat-card-subtitle>
+      </div>
+
+    </div>
+
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <!-- ALERT LIST -->
+  <mat-list>
+
+     @for(alert of alerts();track alert;){
+
+            <mat-list-item  class="alert-item">
+
+      <!-- ICON -->
+      <mat-icon matListItemIcon class="icon" [ngClass]="alert.severity.toLowerCase()">
+        {{ getAlertIcon(alert.type) }}
+      </mat-icon>
+
+      <!-- CONTENT -->
+      <div matListItemTitle class="title">
+        {{ alert.title }}
+              @if((alert.type).toLowerCase() == 'transaction'){
+  <button mat-icon-button (click)="goToTransactions(alert.transactionRefNo)" >
+                <mat-icon>open_in_new</mat-icon>
+              </button>
+              }
+            
+      </div>
+
+
+
+      <div matListItemLine class="message">
+        {{ alert.message }}
+      </div>
+
+    
+       <mat-chip
+        class="severity-chip" [ngClass]="alert.severity.toLowerCase()"
+       >
+
+        {{ alert.type }}
+
+      </mat-chip>
+
+    </mat-list-item>
+     }
+
+
+
+  </mat-list>
+
+</mat-card>

@@ -1,0 +1,62 @@
+<!--TO SHOW RISK SCORE AND GIVE COLOR DEPENDING UPON RISK LEVEL-->
+
+<mat-card class="risk-card">
+
+  <div class="title">
+    RISK SCORE
+    <mat-icon>info</mat-icon>
+  </div>
+
+  <div class="score-section">
+
+    <div class="left">
+
+      <div class="score" [ngClass]="transaction().riskLevel.toLowerCase()" >
+        {{ transaction().riskScore }}
+        <span>/ 100</span>
+      </div>
+
+      <div class="risk-text"  [ngClass]="transaction().riskLevel.toLowerCase()">
+        {{transaction().riskLevel | titlecase }} Risk
+      </div>
+
+    </div>
+
+    <div class="right">
+
+      <div class="progress-container">
+
+        <div class="progress-bar">
+          <div
+            class="progress-fill"
+            [style.width]="progressWidth" [ngClass]="transaction().riskLevel.toLowerCase()">
+          </div>
+        </div>
+
+        <div
+          class="marker"
+          [style.left]="progressWidth">
+
+          <div class="bubble" [ngClass]="transaction().riskLevel.toLowerCase()">
+            {{ transaction().riskScore }}
+          </div>
+
+          <div class="pin" [ngClass]="transaction().riskLevel.toLowerCase()"></div>
+
+        </div>
+
+      </div>
+
+      <div class="scale">
+        <span>0</span>
+        <span>25</span>
+        <span>50</span>
+        <span>75</span>
+        <span>100</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</mat-card>

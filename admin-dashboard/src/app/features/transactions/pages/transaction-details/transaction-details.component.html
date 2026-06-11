@@ -1,0 +1,32 @@
+
+
+<!--TRANSACTION DETAIL PAGE-->
+<div class="page-container">
+
+  <!--HEADR COMPONENT-->
+<app-transaction-details-header></app-transaction-details-header>
+
+<!--SUMMARY CARD-->
+  <app-transaction-details-summary-card [transaction]="transaction()">
+  </app-transaction-details-summary-card>
+
+
+  <div class="risk-row">
+
+    <!--RISK SCORE INFORMATION-->
+    <app-transaction-details-risk-card
+      [transaction]="transaction()">
+    </app-transaction-details-risk-card>
+
+    <app-transaction-details-risk-level-card
+      [transaction]="transaction()">
+    </app-transaction-details-risk-level-card>
+
+  </div>
+
+  <!--ADDITIONAL INFORMATION-->
+  <app-transaction-details-information-card
+    [transaction]="transaction()">
+  </app-transaction-details-information-card>
+
+</div>

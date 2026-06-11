@@ -1,0 +1,62 @@
+<!--HEADER COMPONENT-->
+
+<app-dashboard-header></app-dashboard-header>
+
+<div class="dashboard-container">
+
+  <!--TO SHOW SUMMARY CARD-->
+  <div class="card-grid">
+    @for(card of 
+    (transactionsSummaryCards$ | async) ?? [];
+    track card)
+    {
+         <app-summary-card
+      [card]="card">
+    </app-summary-card>
+    }
+   
+  </div>
+
+  <!--TO SHOW LIVE COUNTER-->
+  <div class="live-counter-section">
+
+    <app-live-counter />
+
+  </div>
+ 
+  <!--
+  CHANNEL BREAKDOWN CHART
+  TRANSACTION CHART
+  RISK CHART
+  -->
+  <div class="channel-chart-wrapper">
+    <app-channel-breakdown [channels]="(channelData$ | async) ?? []"></app-channel-breakdown>
+    <app-transaction-chart></app-transaction-chart>
+    <app-risk-chart [riskLevels]="(riskLevelData$ | async) ?? []"></app-risk-chart>
+  </div>
+
+  <div class="transaction-alert-wrapper">
+
+    <!--TO SHOW TRANSACTION SUMMARY TABLE-->
+    <div class="left">
+        <!-- Left: Transactions -->
+ <app-transaction-summary
+    class="transactions" [transactions]="(transactionsSummary$ | async)?? []">
+  </app-transaction-summary>
+    </div>
+
+    <!--TO SHOW ALERTS-->
+      <div class="right">
+       <!-- Right: Alerts -->
+  <app-alerts [alerts]="(alertData$ | async) ?? []"
+    class="alerts">
+  </app-alerts>
+    </div>
+
+ 
+
+ 
+
+</div>
+
+</div>

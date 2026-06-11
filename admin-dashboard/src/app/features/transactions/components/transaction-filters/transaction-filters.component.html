@@ -1,0 +1,52 @@
+<form class="filters-container" [formGroup]="filterForm">
+
+  <!--DROP DOWN FOR STATUS LIKE PROCESSING FAILED-->
+  <mat-form-field appearance="outline">
+    <mat-label>Status</mat-label>
+ <mat-select formControlName="status">
+    @for(status of statuses; track status) {
+      <mat-option [value]="status">
+        {{ status }}
+      </mat-option>
+    }
+  </mat-select>
+    
+  </mat-form-field>
+
+  <!--DROPDOWN FOR CHANNEL LIKE UIP CARD-->
+  <mat-form-field appearance="outline">
+    <mat-label>Channel</mat-label>
+
+    <mat-select formControlName="channel">
+    @for(channel of channels(); track channel) {
+      <mat-option [value]="channel">
+        {{ channel.channelName.replace('_'," ") }}
+      </mat-option>
+    }
+  </mat-select>
+  </mat-form-field>
+
+  <!--DROPDOWN FOR TYPE LIKE CREDIT DEBIT-->
+    <mat-form-field appearance="outline">
+    <mat-label>Type</mat-label>
+
+    <mat-select formControlName="type">
+    @for(type of type; track type) {
+      <mat-option [value]="type">
+        {{ type }}
+      </mat-option>
+    }
+  </mat-select>
+  </mat-form-field>
+
+  <!--SEARCH TEXT BOX TO SEARCH TRANSACTION BY REF. NO-->
+  <mat-form-field appearance="outline"  >
+    <mat-label>Search</mat-label>
+
+    <input
+      matInput
+      placeholder="Search By REF. No" 
+      formControlName="searchKeyword">
+  </mat-form-field>
+
+</form>

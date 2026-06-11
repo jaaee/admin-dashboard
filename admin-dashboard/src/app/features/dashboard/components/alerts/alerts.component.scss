@@ -1,0 +1,239 @@
+
+
+
+.alerts-card {
+  border-radius: 12px;
+  max-height: 523px;
+  overflow: auto;
+}
+
+/* HEADER */
+.header {
+  padding-bottom: 8px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.warn{
+   color: #f59e0b
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  font-size: 22px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 152, 0, 0.12);
+  
+  box-shadow:
+    0 2px 6px rgba(255, 152, 0, 0.25);
+
+  flex-shrink: 0;
+}
+.warn{
+color: #ff9800;
+
+}
+
+/* LIST ITEM */
+.alert-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* TITLE */
+.title {
+  font-weight: 600;
+}
+
+/* MESSAGE */
+.message {
+  font-size: 12px;
+  color: gray;
+}
+
+
+
+
+.severity-chip {
+  height: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 10px;
+
+  border: none !important;
+  outline: none !important;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+
+  min-width: 60px;
+}
+
+
+
+.severity-chip .mdc-evolution-chip__cell,
+.severity-chip .mdc-evolution-chip__action {
+  border: none !important;
+  outline: none !important;
+}
+
+.mdc-evolution-chip__text-label{
+    color: transparent !important;
+}
+
+/* ================= LOW ================= */
+
+.severity-chip.low {
+  background-color: rgba(33, 150, 243, 0.14)!important;
+  color: #2196F3!important;
+}
+
+
+/* ================= MEDIUM ================= */
+
+.severity-chip.medium {
+  background-color: rgba(255, 152, 0, 0.14);
+  color: #FF9800;
+}
+
+
+/* ================= HIGH ================= */
+
+.severity-chip.high {
+  background-color: rgba(244, 67, 54, 0.14);
+  color: #F44336;
+}
+
+
+/* ================= CRITICAL ================= */
+
+.severity-chip.critical {
+  background-color: rgba(183, 28, 28, 0.14);
+  color: #B71C1C;
+}
+
+/* ================= LOW ================= */
+
+.severity-chip.low .mdc-evolution-chip__text-label {
+  color: #2196F3;
+}
+
+
+/* ================= MEDIUM ================= */
+
+.severity-chip.medium .mdc-evolution-chip__text-label {
+  color: #FF9800;
+}
+
+
+/* ================= HIGH ================= */
+
+.severity-chip.high .mdc-evolution-chip__text-label {
+  color: #F44336;
+}
+
+
+/* ================= CRITICAL ================= */
+
+.severity-chip.critical .mdc-evolution-chip__text-label {
+  color: #B71C1C;
+}
+
+/* ================= ICON COLORS ================= */
+
+.icon{
+      display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px!important;
+  height: 34px!important;
+
+  border-radius: 50%;
+
+  font-size: 22px;
+
+  background: #f5f5f5;
+
+  flex-shrink: 0;
+
+  transition: all 0.2s ease;
+  color: inherit !important;
+
+}
+
+.alert-item:hover .icon {
+  transform: scale(1.05);
+  color: inherit !important;
+
+}
+
+
+/* ================= SEVERITY COLORS ================= */
+
+.icon.low,
+.alert-item:hover .icon.low 
+{
+  color: #2196F3 !important;
+  background: rgba(33, 150, 243, 0.12) !important;
+}
+
+
+
+.icon.medium,
+.alert-item:hover .icon.medium {
+  color: #FF9800!important;
+  background: rgba(255, 152, 0, 0.12)!important;
+  
+}
+
+.icon.high ,
+.alert-item:hover .icon.high{
+  color: #F44336!important;
+  background: rgba(244, 67, 54, 0.12)!important;
+}
+
+.icon.critical ,
+.alert-item:hover .icon.critical{
+  color: #B71C1C!important;
+  background: rgba(183, 28, 28, 0.14)!important;
+}
+
+
+.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.failed {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+

@@ -1,0 +1,23 @@
+
+
+<nav class="breadcrumb">
+  
+
+  @for (crumb of breadcrumbs(); track crumb.url ;let first = $first;let last = $last) {
+    
+    @if (!first) {
+    <span class="separator">/</span>
+  }
+
+   @if (last) {
+    <span class="active">
+      {{ crumb.label }}
+    </span>
+  } @else {
+    <a [routerLink]="crumb.url">
+      {{ crumb.label }}
+    </a>
+  }
+    
+  }
+</nav>

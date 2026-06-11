@@ -1,0 +1,57 @@
+[
+  {
+    "id": "ALT001",
+    "title": "Suspicious Transaction Detected",
+    "message": "Multiple failed login attempts followed by transaction request",
+    "type": "fraud",
+    "severity": "critical",
+    "icon": "report_problem",
+    "source": "Fraud Engine",
+    "timestamp": "2026-05-26T10:15:00Z",
+    "isRead": false
+  },
+  {
+    "id": "ALT002",
+    "title": "High Value Transaction",
+    "message": "Transaction of ₹1,25,000 processed successfully",
+    "type": "transaction",
+    "severity": "high",
+    "icon": "sync",
+    "source": "Transaction Service",
+    "timestamp": "2026-05-26T09:50:00Z",
+    "isRead": false
+  },
+  {
+    "id": "ALT003",
+    "title": "System Maintenance Scheduled",
+    "message": "Planned downtime at 2:00 AM for database upgrade",
+    "type": "system",
+    "severity": "medium",
+    "icon": "settings",
+    "source": "Admin Panel",
+    "timestamp": "2026-05-26T08:30:00Z",
+    "isRead": true
+  },
+  {
+    "id": "ALT004",
+    "title": "Unusual Login Activity",
+    "message": "Login detected from new device in different location",
+    "type": "security",
+    "severity": "high",
+    "icon": "lock",
+    "source": "Security Service",
+    "timestamp": "2026-05-26T07:45:00Z",
+    "isRead": false
+  },
+  {
+    "id": "ALT005",
+    "title": "Transaction Delay",
+    "message": "Processing delay detected in payment gateway",
+    "type": "transaction",
+    "severity": "low",
+    "icon": "schedule",
+    "source": "Payment Gateway",
+    "timestamp": "2026-05-26T07:10:00Z",
+    "isRead": true
+  }
+]

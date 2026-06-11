@@ -1,0 +1,72 @@
+<mat-card class="channel-breakdown-card">
+
+  <div class="card-header">
+
+    <div>
+      <h2>Channel Breakdown</h2>
+      <p>Transaction distribution by payment channels</p>
+    </div>
+
+    <button
+      mat-icon-button>
+
+      <mat-icon>
+        more_vert
+      </mat-icon>
+
+    </button>
+
+  </div>
+
+  <!--SHOWING CHART-->
+
+  <div class="channel-wrapper">
+
+   <div class="chart-container">
+
+        <canvas
+          baseChart
+          [data]="pieChartData"
+          [type]="pieChartType"
+          [options]="pieChartOptions"
+           [plugins]="pieChartPlugins"
+          >
+        </canvas>
+
+  </div>
+
+  <!--CHANNEL AND COLOR SCHEME-->
+  <div class="channel-list">
+
+        @for (channel of channels(); track channel.name) {
+
+          <div class="channel-item">
+
+            <div class="left-section">
+              <span
+                class="dot"
+                [style.background]="channel.color">
+              </span>
+
+              <span class="channel-name">
+                {{ channel.name }}
+              </span>
+            </div>
+
+            <div class="right-section">
+              <span class="percent">
+                {{ channel.percent }}%
+              </span>
+
+              <span class="count">
+                ({{ channel.count }})
+              </span>
+            </div>
+
+          </div>
+
+        }
+
+      </div>
+</div>
+</mat-card>

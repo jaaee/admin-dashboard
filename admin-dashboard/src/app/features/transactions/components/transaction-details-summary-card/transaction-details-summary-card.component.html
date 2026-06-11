@@ -1,0 +1,99 @@
+<!--SUMMARY OF TRANSACTION-->
+<mat-card class="transaction-card">
+
+  <!-- Reference -->
+  <div class="section">
+
+    <div class="icon-wrapper receipt">
+      <mat-icon>receipt_long</mat-icon>
+    </div>
+
+    <div class="content">
+      <div class="label">REFERENCE NO.</div>
+
+      <div class="value-row">
+        <span class="value">{{ transaction().referenceNo }}</span>
+
+        <button
+          type="button"
+          class="copy-btn"
+          (click)="copyReference()">
+
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </div>
+
+      <div class="sub-text">
+        {{ transaction().createdAt }}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Customer -->
+  <div class="section">
+
+    <div class="icon-wrapper customer">
+      <mat-icon>person_outline</mat-icon>
+    </div>
+
+    <div class="content">
+      <div class="label">CUSTOMER NAME</div>
+
+      <div class="value">
+        {{ transaction().customerName }}
+      </div>
+
+     
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Amount -->
+  <div class="section">
+
+    <div class="content">
+      <div class="label">AMOUNT</div>
+
+      <div class="amount">
+        ₹{{ transaction().amount | number:'1.2-2' }}
+      </div>
+
+      <div class="currency-chip">
+        <mat-icon>language</mat-icon>
+        {{ transaction().currency }}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Status -->
+  <div class="section">
+
+    <div class="content">
+      <div class="label">STATUS</div>
+
+      <div class="status-chip success">
+        <mat-icon>check_circle</mat-icon>
+        {{transaction().status}}
+      </div>
+      @if( transaction().status == 'SUCCESS')
+      {
+         <div class="status-text">
+        <span class="dot"></span>
+        Completed
+      </div>
+
+      }
+     
+    </div>
+
+  </div>
+
+</mat-card>

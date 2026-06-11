@@ -1,0 +1,98 @@
+.navbar {
+  height: 72px;
+  background: #081223;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+  color:white;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-box {
+  width: 450px;
+  height: 44px;
+
+  background: #101b2d;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 14px;
+}
+
+.search-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.live-chip {
+  background: rgba(34,197,94,0.15);
+  color: #22c55e;
+
+  padding: 6px 14px;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+   font-size: 13px;
+  font-weight: 600;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+
+
+
+.profile-section img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+
+.app-title {
+  font-size: 18px;
+  font-weight: 600;
+  cursor:pointer;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.center{
+  text-align: center;
+}
+

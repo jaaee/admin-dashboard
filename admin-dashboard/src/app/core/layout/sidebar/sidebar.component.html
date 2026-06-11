@@ -1,0 +1,49 @@
+ <div class="sidebar" #drawer>
+
+  <!-- LOGO -->
+  <div class="logo-section">
+
+    <mat-icon>account_balance</mat-icon>
+
+    <span>TrustBank</span>
+
+  </div>
+
+  <!-- MENU -->
+
+   @for (section of menuSections; track section.heading) {
+
+    <div class="menu-section">
+
+      <h3 class="menu-title">
+        {{ section.heading }}
+      </h3>
+
+      
+
+        @for (item of section.items; track item.label) {
+
+          <button
+            mat-button
+            [routerLink]="item.route"
+            routerLinkActive="active-menu"
+            (click)="menuClick.emit()"
+            class="menu-item">
+            <mat-icon>
+              {{ item.icon }}
+            </mat-icon>
+
+            {{ item.label }}
+
+          </button>
+
+        }
+
+
+    </div>
+
+  }
+
+ 
+</div> 
+

@@ -1,0 +1,72 @@
+<mat-card class="risk-card">
+
+  <h2>Risk Analysis</h2>
+
+
+    <div class="risk-overview">
+
+    <!-- Doughnut Chart -->
+
+    <div class="donut-wrapper">
+
+      <canvas
+        baseChart
+        [data]="riskDonutData"
+        [options]="riskDonutOptions"
+        [plugins]="riskDonutPlugins"
+        [type]="'doughnut'">
+      </canvas>
+
+    </div>
+
+
+    <!-- Risk Legend -->
+
+    <div class="risk-legend">
+
+     
+          @for(item of riskLevels(); track item){
+ <div class="legend-item">
+
+        <div class="legend-left">
+
+          <span class="dot" 
+          [ngClass]="{
+             'critical': item.label === 'Critical Risk',
+    'high': item.label === 'High Risk',
+    'medium': item.label ==='Medium Risk',
+    'low': item.label === 'Low Risk'
+  }">
+          </span>
+
+          <span>{{item.label}}</span>
+
+        </div>
+
+        <strong>{{item.percentage}}</strong>
+ </div>
+          }
+          
+     
+
+    </div>
+
+  </div>
+
+
+  <!-- Line Chart -->
+
+  <div class="line-chart-container">
+
+    <canvas
+      baseChart
+      [data]="riskTrendData"
+      [options]="riskTrendOptions"
+      [type]="'line'">
+    </canvas>
+
+  </div>
+
+ 
+
+</mat-card>

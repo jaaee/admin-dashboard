@@ -1,0 +1,16 @@
+.layout-container {
+  height: 100vh;
+}
+
+.sidebar-container {
+  width: 260px;
+  background: #081223;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.page-container {
+  padding: 20px;
+  min-height: calc(100vh - 130px);
+}

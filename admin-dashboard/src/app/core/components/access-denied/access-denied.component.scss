@@ -1,0 +1,108 @@
+.access-denied-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  background: #0f172a;
+}
+
+.access-denied-card {
+  width: 100%;
+  max-width: 520px;
+
+  padding: 40px;
+
+  text-align: center;
+
+  background: #1e293b;
+  border-radius: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.25),
+    0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.lock-icon {
+  width: 80px;
+  height: 80px;
+
+  font-size: 80px;
+
+  color: #ef4444;
+
+  margin-bottom: 20px;
+}
+
+.access-denied-card h1 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.access-denied-card p {
+  margin: 0 0 32px;
+
+  color: #94a3b8;
+
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.action-buttons button {
+  min-width: 140px;
+}
+
+.primary-btn {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+.secondary-btn {
+  background: transparent !important;
+  color: #cbd5e1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+@media (max-width: 600px) {
+
+  .access-denied-card {
+    padding: 32px 24px;
+  }
+
+  .access-denied-card h1 {
+    font-size: 28px;
+  }
+
+  .lock-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 64px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .action-buttons button {
+    width: 100%;
+  }
+}

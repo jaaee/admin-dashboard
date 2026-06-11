@@ -1,0 +1,112 @@
+ [
+    {
+      "title": "Total Transactions",
+      "value": 15240,
+      "icon": "sync_alt",
+      "color": "primary",
+      "change": "12.5% vs yesterday",
+      "isIncrease": true,
+      "chartData": [
+        1200,
+        1400,
+        1350,
+        1600,
+        1800,
+        1750,
+        2100,
+        2300,
+        2200,
+        2500,
+        2400,
+        2800
+      ]
+    },
+    {
+      "title": "Successful",
+      "value": 13840,
+      "icon": "check_circle",
+      "color": "success",
+      "change": "10.8% vs yesterday",
+      "isIncrease": true,
+      "chartData": [
+        1000,
+        1200,
+        1100,
+        1400,
+        1600,
+        1500,
+        1900,
+        2000,
+        1950,
+        2200,
+        2150,
+        2400
+      ]
+    },
+    {
+      "title": "Failed",
+      "value": 640,
+      "icon": "cancel",
+      "color": "danger",
+      "change": "4.3% vs yesterday",
+      "isIncrease": false,
+      "chartData": [
+        120,
+        110,
+        105,
+        100,
+        95,
+        90,
+        88,
+        85,
+        82,
+        80,
+        75,
+        70
+      ]
+    },
+    {
+      "title": "Pending",
+      "value": 760,
+      "icon": "schedule",
+      "color": "warning",
+      "change": "5.6% vs yesterday",
+      "isIncrease": true,
+      "chartData": [
+        200,
+        240,
+        220,
+        260,
+        300,
+        280,
+        320,
+        350,
+        340,
+        380,
+        360,
+        400
+      ]
+    },
+    {
+      "title": "High Risk",
+      "value": 128,
+      "icon": "shield",
+      "color": "purple",
+      "change": "8.2% vs yesterday",
+      "isIncrease": false,
+      "chartData": [
+        60,
+        65,
+        70,
+        68,
+        72,
+        75,
+        78,
+        82,
+        85,
+        88,
+        92,
+        96
+      ]
+    }
+  ]

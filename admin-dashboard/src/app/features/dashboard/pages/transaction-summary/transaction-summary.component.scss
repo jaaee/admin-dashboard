@@ -1,0 +1,55 @@
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.table-card {
+  padding: 24px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 16px;
+  border-bottom: 1px solid #eeeeee;
+  text-align: left;
+}
+
+.table-wrapper {
+  padding: 12px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+}
+
+mat-chip.success {
+  background: #e6f4ea;
+  color: #1e7e34;
+}
+
+mat-chip.failed {
+  background: #fdecea;
+  color: #c62828;
+}
+
+mat-chip.pending {
+  background: #fff4e5;
+  color: #ef6c00;
+}
+
+.table-header{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}    

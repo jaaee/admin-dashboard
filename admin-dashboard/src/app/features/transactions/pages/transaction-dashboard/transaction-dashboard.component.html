@@ -1,0 +1,20 @@
+
+<section class="dashboard-page">
+  <!--TRANSACTION TOOLBAR-->
+<app-transaction-toolbar (exportClicked)="exportTransactions()" />
+
+ <!--TRANSACTION FILTER-->
+  <app-transaction-filters (filterChanged)="onFilterChanged($event)" [searchKeyword]="searchKeyword"/>
+
+  <!--TRANSACTION TABLE-->
+  <app-transaction-table
+    [data]="transactionPage()?.content ?? []"></app-transaction-table>
+  
+    <!--TRANSACTION PAGINATION-->
+ <app-transaction-pagination [totalRecords] ="transactionPage()?.totalElements  ?? 0"
+  [pageSize]="transactionPage()?.pageSize ?? 10"
+  [pageIndex]="transactionPage()?.pageNumber ?? 0" (onTransactionPageChange)="updatePageFilter($event)">
+ 
+ ></app-transaction-pagination>
+ 
+</section>

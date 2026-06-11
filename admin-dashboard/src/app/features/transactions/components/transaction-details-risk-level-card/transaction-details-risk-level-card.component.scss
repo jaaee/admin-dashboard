@@ -1,0 +1,145 @@
+
+.risk-level-card {
+  padding: 20px 24px;
+  border-radius: 16px;
+
+  background: #1e293b;
+  border: 1px solid #334155;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 14px;
+  font-weight: 700;
+  color: #cbd5e1;
+
+  mat-icon {
+    color: #94a3b8;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  margin-top: 24px;
+}
+
+/* Outer Circle */
+
+.icon-wrapper {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 50%;
+
+  background: rgba(249, 115, 22, 0.12);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+/* Shield */
+
+.shield {
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  border: 2px solid #f97316;
+  background: rgba(249, 115, 22, 0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.risk-level {
+  font-size: 28px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.description {
+  margin-top: 8px;
+
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.low {
+  color: #2196F3;
+}
+
+.medium {
+  color: #FF9800;
+}
+
+.high {
+  color: #F44336;
+}
+
+.critical {
+  color: #B71C1C;
+}
+
+
+.shield.low{
+ 
+  border: 2px solid #2196F3;
+ 
+
+  mat-icon {
+    color:#2196F3
+  }
+}
+
+.shield.medium{
+ 
+  border: 2px solid #FF9800;;
+ 
+
+  mat-icon {
+    color:#FF9800;
+  }
+}
+
+.shield.high{
+ 
+  border: 2px solid #F44336;
+ 
+
+  mat-icon {
+    color: #F44336
+  }
+}
+.shield.critical{
+ 
+  border: 2px solid #B71C1C;
+ 
+
+  mat-icon {
+    color:#B71C1C
+  }
+}

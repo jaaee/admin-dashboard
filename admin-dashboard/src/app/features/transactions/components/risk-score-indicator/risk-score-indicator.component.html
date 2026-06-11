@@ -1,0 +1,11 @@
+<!--PROGRESS BAR FOR RISK SCORE-->
+<div class="risk-wrapper">
+
+  <span>{{ score() }}%</span>
+
+  <mat-progress-bar
+    mode="determinate"
+    [value]="score()">
+  </mat-progress-bar>
+
+</div>

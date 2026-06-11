@@ -1,0 +1,35 @@
+
+
+<!--TO SHOW RISK LEVEL-->
+<mat-card class="risk-level-card">
+
+  <div class="title">
+    RISK LEVEL
+    <mat-icon>info</mat-icon>
+  </div>
+
+  <div class="content">
+
+    <div class="icon-wrapper">
+
+      <div class="shield"  [ngClass]="transaction().riskLevel.toLowerCase()">
+        <mat-icon>warning_amber</mat-icon>
+      </div>
+
+    </div>
+
+    <div>
+
+      <div class="risk-level" [ngClass]="transaction().riskLevel.toLowerCase()">
+        {{ transaction().riskLevel }}
+      </div>
+
+      <div class="description">
+        This transaction has {{transaction().riskLevel}} risk level
+      </div>
+
+    </div>
+
+  </div>
+
+</mat-card>

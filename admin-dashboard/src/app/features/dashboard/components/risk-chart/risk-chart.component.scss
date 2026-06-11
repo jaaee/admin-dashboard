@@ -1,0 +1,123 @@
+.risk-card {
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  height:100%
+}
+
+.risk-item {
+  margin-top: 20px;
+}
+
+.risk-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+
+
+/* TOP SECTION */
+
+.risk-overview {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 24px;
+}
+
+
+/* DONUT */
+
+.donut-wrapper {
+
+  width: 180px;
+
+  height: 180px;
+}
+
+
+/* LEGEND */
+
+.risk-legend {
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.legend-item {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  font-size: 14px;
+
+  color: #334155;
+}
+
+.legend-left {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+/* DOTS */
+
+.dot {
+
+  width: 10px;
+
+  height: 10px;
+
+  border-radius: 50%;
+}
+
+.critical {
+
+  background: #B71C1C;
+}
+
+.high {
+
+  background: #F44336;
+}
+
+.medium {
+
+  background: #FF9800;
+}
+
+.low {
+
+  background: #2196F3;
+}
+
+
+/* LINE CHART */
+
+.line-chart-container {
+
+  height: 140px;
+
+  margin-bottom: 20px;
+}
+
+

@@ -1,0 +1,45 @@
+
+<!--SHOWING LIVE COUNTER DATA -->
+<div class="live-wrapper">
+
+  <div class="header">
+    <div class="title">Live Counters</div>
+    <div class="live-badge">
+      <span class="dot"></span>
+      Live
+    </div>
+  </div>
+
+  <div class="grid">
+
+     @for(counter of counterCards();
+    track counter.title
+  ) {
+     <mat-card
+      class="counter-card"
+      [ngClass]="counter.status">
+
+      <div class="left icon-wrapper">
+        <mat-icon class="icon" [ngClass]="counter.status">{{ counter.icon }}</mat-icon>
+      </div>
+
+      <div class="content">
+        <div class="label">{{ counter.title }}</div>
+        <div class="value">{{ counter.value }}</div>
+        
+
+        <!-- mini bar animation (fake live feel) -->
+        <div class="bars">
+          @for(i of  [1,2,3,4,5,6,7,8,9,10] ; track i;){
+ <span></span>
+          }
+         
+        </div>
+      </div>
+
+    </mat-card>
+  }
+   
+
+  </div>
+</div>

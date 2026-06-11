@@ -1,0 +1,137 @@
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+   //background-color: var(--mat-sys-surface);
+  //background-color: #ffffff;
+  background-color: #f5f7fa;
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+  height: 100%;
+}
+
+/* ================= BASE CHIP ================= */
+
+
+.severity-chip {
+  height: 20px !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 999px;
+  padding: 0 10px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* REMOVE MDC DEFAULT OUTLINE */
+.severity-chip .mdc-evolution-chip__cell,
+.severity-chip .mdc-evolution-chip__action ,
+.mat-mdc-standard-chip{
+  border: none !important;
+  outline: none !important;
+}
+
+
+/* ================= LABEL COLOR (IMPORTANT PART) ================= */
+
+.severity-chip.low .mdc-evolution-chip__text-label {
+  color: #2196F3 !important;
+}
+
+.severity-chip.medium .mdc-evolution-chip__text-label {
+  color: #FF9800 !important;
+}
+
+.severity-chip.high .mdc-evolution-chip__text-label {
+  color: #F44336 !important;
+}
+
+.severity-chip.critical .mdc-evolution-chip__text-label {
+  color: #B71C1C !important;
+}
+
+/* ================= BACKGROUND ================= */
+
+.severity-chip.low {
+  background: rgba(33, 150, 243, 0.12) !important;
+}
+
+.severity-chip.medium {
+  background: rgba(255, 152, 0, 0.12) !important;
+}
+
+.severity-chip.high {
+  background: rgba(244, 67, 54, 0.12) !important;
+}
+
+.severity-chip.critical {
+  background: rgba(183, 28, 28, 0.12) !important;
+}
+
+
+// @use '@angular/material' as mat;
+
+// html {
+//   height: 100%;
+
+//   @include mat.theme((
+//     color: (
+//       primary: mat.$azure-palette,
+//       tertiary: mat.$blue-palette,
+//     ),
+//     typography: Roboto,
+//     density: 0,
+//   ));
+// }
+
+// /* IMPORTANT */
+// html,
+// body {
+//   height: 100%;
+//   margin: 0;
+
+//   /* FORCE BACKGROUND */
+//   background: #ffffff !important;
+// }
+
+// /* Override Material system variables */
+// :root {
+//   --mat-sys-surface: #ffffff;
+//   --mat-app-background-color: #ffffff;
+// }
+
+// body {
+//   // color-scheme: light;
+//   // color: var(--mat-sys-on-surface);
+//   // font: var(--mat-sys-body-medium);
+// }
+/* You can add global styles to this file, and also import other style files */

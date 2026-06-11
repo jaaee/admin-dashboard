@@ -1,0 +1,44 @@
+.filters-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+      background: #0f172a;
+    padding: 16px;
+    border-radius: 14px;
+    color: #fff;
+}
+
+::ng-deep .filters-container .mdc-notched-outline__leading,
+::ng-deep .filters-container .mdc-notched-outline__notch,
+::ng-deep .filters-container .mdc-notched-outline__trailing {
+  border-color: #cbd5e1 !important;
+}
+
+::ng-deep .filters-container .mat-mdc-form-field .mat-mdc-floating-label {
+  color: #ffffff !important;
+}
+
+::ng-deep .filters-container .mat-mdc-input-element {
+  color: #ffffff !important;
+}
+
+::ng-deep .filters-container .mat-mdc-select-value {
+  color: #ffffff !important;
+}
+
+::ng-deep .filters-container .mat-mdc-form-field:hover .mdc-notched-outline__leading,
+::ng-deep .filters-container .mat-mdc-form-field:hover .mdc-notched-outline__notch,
+::ng-deep .filters-container .mat-mdc-form-field:hover .mdc-notched-outline__trailing {
+  border-color: #60a5fa !important;
+}
+
+::ng-deep .filters-container .mdc-text-field--focused .mdc-notched-outline__leading,
+::ng-deep .filters-container .mdc-text-field--focused .mdc-notched-outline__notch,
+::ng-deep .filters-container .mdc-text-field--focused .mdc-notched-outline__trailing {
+  border-color: #3b82f6 !important;
+}
+
+mat-form-field {
+  width: 250px;
+}

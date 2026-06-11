@@ -1,0 +1,26 @@
+ [
+    {
+      "title": "Transactions/sec",
+      "value": "248",
+      "icon": "sync",
+      "status": "primary"
+    },
+    {
+      "title": "Active Users",
+      "value": "12,840",
+      "icon": "groups",
+      "status": "success"
+    },
+    {
+      "title": "Pending Queue",
+      "value": "320",
+      "icon": "schedule",
+      "status": "warning"
+    },
+    {
+      "title": "Fraud Alerts",
+      "value": "18",
+      "icon": "warning",
+      "status": "danger"
+    }
+  ]

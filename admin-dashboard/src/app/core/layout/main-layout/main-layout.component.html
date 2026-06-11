@@ -1,0 +1,35 @@
+<mat-sidenav-container class="layout-container">
+
+  <mat-sidenav
+    
+    class="sidebar-container"
+    #sidebar
+    mode="over"
+    position="start"
+  >
+    <app-sidebar  (menuClick)="sidebar.close()"></app-sidebar>
+  </mat-sidenav>
+
+  <!-- MAIN CONTENT -->
+  <mat-sidenav-content>
+
+    <!-- NAVBAR -->
+    <app-navbar (menuClick)="sidebar.toggle()"></app-navbar>
+
+    <!-- PAGE CONTENT -->
+    <div class="page-container">
+
+      <!-- BREADCRUMB -->
+      <app-breadcrumb></app-breadcrumb>
+
+      <!-- ROUTER CONTENT -->
+      <router-outlet></router-outlet>
+
+    </div>
+
+    <!-- FOOTER -->
+    <app-footer></app-footer>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,25 @@
+<!--ACTION MENU-->
+<button
+  mat-icon-button
+  [matMenuTriggerFor]="menu">
+
+  <mat-icon>
+    more_vert
+  </mat-icon>
+
+</button>
+
+
+<mat-menu #menu="matMenu">
+
+  <button
+    mat-menu-item
+    (click)="viewTransaction()">
+
+    <mat-icon>visibility</mat-icon>
+
+    <span>View</span>
+
+  </button>
+
+</mat-menu>

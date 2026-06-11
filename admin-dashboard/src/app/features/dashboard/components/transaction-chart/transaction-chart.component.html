@@ -1,0 +1,19 @@
+<!--TRANSACTION CHART ON CARD-->
+<mat-card class="chart-card">
+  <div>
+         <h2>Transaction Analytics</h2>
+
+  </div>
+
+   <div class="chart-container">
+
+    <canvas
+      baseChart
+      [data]="lineChartData"
+      [options]="lineChartOptions"
+      [type]="'line'">
+
+    </canvas>
+
+  </div>
+</mat-card>

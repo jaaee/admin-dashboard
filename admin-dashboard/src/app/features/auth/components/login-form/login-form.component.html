@@ -1,0 +1,82 @@
+ <!-- STEPPER -->
+
+    <mat-stepper linear #stepper>
+
+  <!-- STEP 1 LOGIN AND PASSWORD -->
+  <mat-step [stepControl]="loginFormGroup">
+    <form  class="form-container" [formGroup]="loginFormGroup">
+
+      <ng-template matStepLabel>Credentials</ng-template>
+
+      <mat-form-field appearance="outline">
+         <mat-icon matPrefix>person</mat-icon>
+        <mat-label>User Name</mat-label>
+        <input matInput  placeholder="Enter your User Name" formControlName="userName">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+
+  <mat-icon matPrefix>
+    lock
+  </mat-icon>
+
+  <mat-label>
+    Enter your Password
+  </mat-label>
+
+  <input
+    matInput
+    [type]="hidePassword ? 'password' : 'text'"
+    formControlName="password">
+
+  <button
+    mat-icon-button
+    matSuffix
+    type="button"
+    (click)="hidePassword = !hidePassword">
+
+    <mat-icon>
+      {{ hidePassword ? 'visibility_off' : 'visibility' }}
+    </mat-icon>
+
+  </button>
+
+</mat-form-field>
+
+      <button mat-flat-button class="form-button" color="primary"  (click)="submit(stepper)">
+        Next
+      </button>
+
+      
+      @if (errorMessage()) {
+  <mat-error>
+    {{ errorMessage ()}}
+  </mat-error>
+}
+
+    </form>
+  </mat-step>
+
+  <!-- STEP 2 OTP VERIFICATION -->
+  <mat-step [stepControl]="otpFormGroup">
+    <form  class="form-container" [formGroup]="otpFormGroup">
+
+      <ng-template matStepLabel>Verification</ng-template>
+
+      <mat-form-field appearance="outline">
+         <mat-icon matPrefix>password</mat-icon>
+        <mat-label>Enter OTP</mat-label>
+        <input matInput formControlName="otp">
+      </mat-form-field>
+
+      <button mat-button matStepperPrevious class="form-button">Back</button>
+      <button mat-flat-button  class="form-button" color="primary"   routerLink="/dashboard">
+        Verify
+      </button>
+
+    </form>
+  </mat-step>
+
+
+</mat-stepper>  
+
