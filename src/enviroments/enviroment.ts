@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080/api',
-  systemUrl : 'http://localhost:8080/'
+  apiUrl: 'https://backend-admin-dashboard-t4mc.onrender.com/api',
+  systemUrl : 'https://backend-admin-dashboard-t4mc.onrender.com/'
 };
