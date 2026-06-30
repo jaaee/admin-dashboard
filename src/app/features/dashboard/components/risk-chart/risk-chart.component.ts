@@ -17,6 +17,7 @@ export class RiskChartComponent
 {
 
  riskLevels= input<RiskLevel[]>([]);
+ highRiskLineData = input<any[]>([]);
 
 
  //TO SHOW THIS AS CENTER TEXT
@@ -145,21 +146,22 @@ public riskDonutPlugins = [
 
 /* ---------------- LINE CHART ---------------- */
 
-public riskTrendData:
-ChartData<'line'> = {
+public riskTrendData= computed<ChartData<'line'>>(() => ({
 
   labels: [
-    '10:25',
-    '10:26',
-    '10:27',
-    '10:28',
-    '10:29',
-    '10:30'
-  ],
+      'Mon',
+      'Tue',
+      'Wed',
+      'Thu',
+      'Fri',
+      'Sat',
+      'Sun'
+    ],
+
 
   datasets: [
     {
-      data: [18, 14, 20, 13, 21, 18],
+      data: this.highRiskLineData(),
 
       borderColor: '#FF5A5F',
 
@@ -175,7 +177,7 @@ ChartData<'line'> = {
       pointHoverRadius: 5
     }
   ]
-};
+}));
 
 
 

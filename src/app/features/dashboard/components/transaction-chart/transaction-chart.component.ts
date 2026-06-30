@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,computed,input } from '@angular/core';
 import 'chart.js/auto';
 import {
   Chart,
@@ -35,7 +35,10 @@ import { MATERIAL_COMMON } from '../../../../core/shared/material/common.imports
   styleUrl: './transaction-chart.component.scss',
 })
 export class TransactionChartComponent {
- public lineChartData: ChartConfiguration<'line'>['data'] = {
+  
+  chartData = input<any[]>([]);
+
+ public lineChartData = computed<ChartConfiguration<'line'>['data']>(() => ({
     labels: [
       'Mon',
       'Tue',
@@ -48,15 +51,7 @@ export class TransactionChartComponent {
 
     datasets: [
       {
-        data: [
-          1200,
-          1900,
-          3000,
-          2500,
-          4200,
-          3800,
-          4500
-        ],
+        data: this.chartData(),
 
         label: 'Transactions',
 
@@ -75,7 +70,7 @@ export class TransactionChartComponent {
         pointRadius: 5
       }
     ]
-  };
+  }));
 
   public lineChartOptions: ChartOptions<'line'> = {
 

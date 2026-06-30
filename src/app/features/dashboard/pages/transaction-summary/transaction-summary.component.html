@@ -46,7 +46,7 @@
       </tbody>
 
     </table> -->
-    <table mat-table [dataSource]="transactions" class="mat-elevation-z2">
+    <table mat-table [dataSource]="transactions.content" class="mat-elevation-z2">
 
   <!-- Transaction ID -->
   <ng-container matColumnDef="id">
@@ -121,9 +121,10 @@
 </table>
     
     <mat-paginator
-  [length]="10"
-  [pageSize]="5"
-  [pageSizeOptions]="[5, 10]">
+  [length]= transactions.totalElements
+  [pageSize]= transactions.pageSize
+  [pageSizeOptions]="[5, 10]"
+  (page)="onPageChange($event)">
 </mat-paginator>
 
   </mat-card>

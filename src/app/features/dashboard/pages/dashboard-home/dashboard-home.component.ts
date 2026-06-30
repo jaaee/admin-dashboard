@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject,Signal,signal } from '@angular/core';
 import { SummaryCard } from '../../models/summary-card.model';
 
 import { DashboardHeaderComponent } from '../../components/dashboard-header/dashboard-header.component';
@@ -6,7 +6,7 @@ import { RiskChartComponent } from '../../components/risk-chart/risk-chart.compo
 import { ChannelBreakdownComponent } from '../../components/channel-breakdown/channel-breakdown.component';
 import { TransactionChartComponent } from '../../components/transaction-chart/transaction-chart.component';
 import { SummaryCardComponent } from '../../components/summary-card/summary-card.component';
-import { map, Observable } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { LiveCounterComponent } from "../../components/live-counter/live-counter.component";
 import { Channel } from '../../models/channel.model';
@@ -16,6 +16,8 @@ import { AlertsComponent } from "../../components/alerts/alerts.component";
 import { Alert } from '../../models/alert.model';
 import { Transaction } from '../../../transactions/models/transaction.model';
 import { RiskLevel } from '../../models/risk-level.model';
+import { TransactionPage } from '../../../transactions/models/transaction-page';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 
   
 
@@ -29,6 +31,10 @@ export class DashboardHomeComponent
 {
 
    private dashboardService = inject(DashboardService)
+
+    pageNo = signal(0)
+    pageSize = signal(5);
+
 
    //TO SET COLORS ACCORDING TO CHANNELS
   CHANNEL_COLORS:any = {
@@ -73,6 +79,7 @@ cardConfig: Record<string, { icon: string; color: string }> = {
 };
 
 
+
    transactionsSummaryCards$: Observable<SummaryCard[]> =
     this.dashboardService.getSummaryCardsData().pipe(
   map(cards =>
@@ -84,9 +91,22 @@ cardConfig: Record<string, { icon: string; color: string }> = {
   )
 );
     
-   transactionsSummary$: Observable<Transaction[]> =
-    this.dashboardService.getRecentTransactions();
+  //  transactionsSummary$: Observable<TransactionPage> =
+  //   this.dashboardService.getRecentTransactions(this.pageNo(),this.pageSize());
 
+
+  refresh = computed(() => ({
+  pageNo: this.pageNo(),
+  pageSize: this.pageSize()
+}));
+
+ transactionsSummary: Signal<TransactionPage | undefined> = toSignal(
+  toObservable(this.refresh).pipe(
+    switchMap(({ pageNo, pageSize }) =>
+      this.dashboardService.getRecentTransactions(pageNo, pageSize)
+    )
+  )
+);
     channelData$: Observable<Channel[]> = this.dashboardService.getChannelData().pipe(
     map(response =>
       response.map((item :Channel)=> ({
@@ -113,4 +133,15 @@ cardConfig: Record<string, { icon: string; color: string }> = {
       }))
     )
   );
+
+  transactionChartData$:Observable<any[]> = this.dashboardService.getTransactionDataOverWeek();
+  
+  highRiskLineData$:Observable<any[]> = this.dashboardService.getHighRiskTransactionDataOverWeek();
+
+  updatePageFilter(event$:any){
+   
+    this.pageNo.set(event$.pageNo);
+  this.pageSize.set(event$.pageSize);
+  }
+
 }

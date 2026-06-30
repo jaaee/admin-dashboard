@@ -31,8 +31,8 @@
   -->
   <div class="channel-chart-wrapper">
     <app-channel-breakdown [channels]="(channelData$ | async) ?? []"></app-channel-breakdown>
-    <app-transaction-chart></app-transaction-chart>
-    <app-risk-chart [riskLevels]="(riskLevelData$ | async) ?? []"></app-risk-chart>
+    <app-transaction-chart [chartData]="(transactionChartData$ | async) ?? []"></app-transaction-chart>
+    <app-risk-chart [riskLevels]="(riskLevelData$ | async) ?? []" [highRiskLineData]="(highRiskLineData$ | async)?? []"></app-risk-chart>
   </div>
 
   <div class="transaction-alert-wrapper">
@@ -41,7 +41,7 @@
     <div class="left">
         <!-- Left: Transactions -->
  <app-transaction-summary
-    class="transactions" [transactions]="(transactionsSummary$ | async)?? []">
+    class="transactions" [transactions]="(transactionsSummary()?? {content:[],totalElements:0,pageSize:10,pageNumber:0})" (onTransactionPageChange)="updatePageFilter($event)">
   </app-transaction-summary>
     </div>
 

@@ -55,11 +55,11 @@
 
             <div class="right-section">
               <span class="percent">
-                {{ channel.percent }}%
+                {{ channel.percent |  number:'1.2-2'}}%
               </span>
 
               <span class="count">
-                ({{ channel.count }})
+                ({{ channel.count |  number:'1.2-2' }})
               </span>
             </div>
 

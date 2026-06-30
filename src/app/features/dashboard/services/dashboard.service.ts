@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {API_ENDPOINTS} from "./../../../core/shared/constants/api.constants";
@@ -7,6 +7,7 @@ import { Channel } from '../models/channel.model';
 import { Transaction } from '../../transactions/models/transaction.model';
 import { SummaryCard } from '../models/summary-card.model';
 import { RiskLevel } from '../models/risk-level.model';
+import { TransactionPage } from '../../transactions/models/transaction-page';
 
 @Injectable({
   providedIn: 'root',
@@ -24,8 +25,12 @@ export class DashboardService {
     }
 
     
-  getRecentTransactions(): Observable<Transaction[]> {
-    return this.http.get<Transaction[]>(API_ENDPOINTS.TRANSACTIONS + "/recent")
+  getRecentTransactions(pageNo:number,pageSize:number): Observable<TransactionPage> {
+    const params = new HttpParams()
+  .set('page', pageNo)
+  .set('size', pageSize);
+
+    return this.http.get<TransactionPage>(API_ENDPOINTS.TRANSACTIONS + "/recent",{params})
   }
 
   
@@ -41,5 +46,11 @@ export class DashboardService {
     return this.http.get(this.url)
   }
   
+  getTransactionDataOverWeek():Observable<any> {
+    return this.http.get(API_ENDPOINTS.STATISTICS + "/totalTransactionTrend")
+  }
 
+  getHighRiskTransactionDataOverWeek():Observable<any> {
+    return this.http.get(API_ENDPOINTS.STATISTICS + "/highRisktransactionTrend")
+  }
 }

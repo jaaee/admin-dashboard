@@ -89,7 +89,7 @@ public pieChartOptions:
         
       /* Main Text */
 
-      ctx.font = '600 32px Roboto';
+      ctx.font = '600 28px Roboto';
 
       ctx.fillStyle = '#111827';
 

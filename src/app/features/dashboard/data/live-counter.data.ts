@@ -14,7 +14,7 @@ export const LIVE_COUNTER_CARDS = [
       "status": "success"
     },
     {
-    "key":"activeUsers",
+    "key":"pendingQueue",
       "title": "Pending Queue",
       "value": "320",
       "icon": "schedule",
