@@ -6,15 +6,21 @@
 
   <!--TO SHOW SUMMARY CARD-->
   <div class="card-grid">
-    @for(card of 
-    (transactionsSummaryCards$ | async) ?? [];
+     @if (transactionsSummaryCards$ | async; as cards) {
+    @for(card of cards;
     track card)
     {
          <app-summary-card
       [card]="card">
     </app-summary-card>
     }
-   
+  }
+   @else {
+
+    @for (item of [1,2,3,4,5]; track item) {
+      <app-summary-card-loader></app-summary-card-loader>
+    }
+  }
   </div>
 
   <!--TO SHOW LIVE COUNTER-->

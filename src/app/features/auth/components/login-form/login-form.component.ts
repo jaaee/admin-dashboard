@@ -31,13 +31,13 @@ export class LoginFormComponent{
 
   //LOGIN FORM INITIALIZED
   loginFormGroup = this.fb.nonNullable.group({
-  userName: ['', Validators.required],
-  password: ['', Validators.required]
+  userName: ['aaravsharma', Validators.required],
+  password: ['123', Validators.required]
 });
 
 //OTP FORM INITIALIZED
 otpFormGroup = this.fb.group({
-  otp: ['', Validators.required]
+  otp: ['998540', Validators.required]
 });
 
 

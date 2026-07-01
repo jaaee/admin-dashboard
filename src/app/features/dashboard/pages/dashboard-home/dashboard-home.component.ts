@@ -18,12 +18,13 @@ import { Transaction } from '../../../transactions/models/transaction.model';
 import { RiskLevel } from '../../models/risk-level.model';
 import { TransactionPage } from '../../../transactions/models/transaction-page';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
+import { SummaryCardLoaderComponent } from '../../../../core/components/summary-card-loader/summary-card-loader.component';
 
   
 
 @Component({
   selector: 'app-dashboard-home',
-  imports: [ CommonModule,DashboardHeaderComponent, RiskChartComponent, ChannelBreakdownComponent, TransactionChartComponent, SummaryCardComponent, LiveCounterComponent, TransactionSummaryComponent, AlertsComponent],
+  imports: [ CommonModule,DashboardHeaderComponent, RiskChartComponent, ChannelBreakdownComponent, TransactionChartComponent, SummaryCardComponent, LiveCounterComponent, TransactionSummaryComponent, AlertsComponent,SummaryCardLoaderComponent],
   templateUrl: './dashboard-home.component.html',
   styleUrl: './dashboard-home.component.scss',
 })
